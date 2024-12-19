@@ -1,10 +1,10 @@
-function c=gravitydiffusion(G,x,y,z,v,I)
+function c=gravitydiffusion(g,x,y,z,v,I)
 [M,N]=size(I);
 c=zeros(M,N);
 temp=zeros(M,N);
 for i=1:M
     for j=1:N
-        temp(i,j)=mod(round(G*(x*y*i^3+y*z*j^3+x*y*z)/((x-i)^2+((y-j)^2+z*z))),256);
+        temp(i,j)=mod(round(g*(x*y*i^3+y*z*j^3+x*y*z)/((x-i)^2+((y-j)^2+z*z))),256);
     end
 end
 c(1,1)=bitxor(bitxor(I(1,1),temp(1,1)),v);
