@@ -1,9 +1,10 @@
 function f=fibonacci_t(I,r,s)
 [m,n]=size(I);
 if n~=m 
-    error('不是方阵�?'); 
+    error('不是方阵'); 
     return 
 end 
+% a = zeros(m,n);
 if s==0 
     for k=1:r
         for i=1:m 
