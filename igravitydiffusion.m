@@ -1,10 +1,10 @@
-function I=igravitydiffusion(G,x,y,z,v,c)
+function I=igravitydiffusion(g,x,y,z,v,c)
 [M,N]=size(c);
 I=zeros(M,N);
 temp=zeros(M,N);
 for i=1:M
     for j=1:N
-        temp(i,j)=mod(round(G*(x*y*i^3+y*z*j^3+x*y*z)/((x-i)^2+((y-j)^2+z*z))),256);
+        temp(i,j)=mod(round(g*(x*y*i^3+y*z*j^3+x*y*z)/((x-i)^2+((y-j)^2+z*z))),256);
     end
 end
 I(1,1)=bitxor(bitxor(c(1,1),temp(1,1)),v);
