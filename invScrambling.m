@@ -1,6 +1,6 @@
-function [T]=invScrambling(input,seed)
+function [T]=invScrambling(input,Seq)
 [m,n]=size(input);
-[y,num]=sort(seed);
+[~,num]=sort(Seq);
 scrambled=zeros(m,n);
 for i=1:m*n
     scrambled(num(i))=input(i);
